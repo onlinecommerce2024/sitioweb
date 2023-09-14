@@ -1,11 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Commerce - Lo mejor para encontrar en locales</title>
+    <link rel="icon" href="images/Logo.ico" />
+
+    <!-- UIkit CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit-icons.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <style>
+      :root {
+        --uk-background-default: #fff; /*#e9edf4;*/
+        --color-primary: #ff6b00;
+        --color-secondary: #ff0000;
+        --color-tercery: #808080;
+        --color-black: #000;
+      }
+
+      body {
+        margin: 0;
+        background-color: var(--uk-background-default);
+        font-family: "Barlow Condensed", sans-serif !important;
+      }
+      .linea {
+        background-color: var(--color-primary);
+        color: var(--color-black);
+        height: 50px;
+      }
+      .text-linea {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 5px;
+      }
+      .icono-nav {
+        width: 50px;
+        height: 40px;
+        margin: 0px !important;
+        padding: 0%;
+        margin-top: 5px !important;
+      }
+      .uk-container {
+        margin: 0%;
+        margin-right: 0%;
+      }
+      nav {
+        color: var(--color-black);
+        background-color: var(--uk-background-default) !important;
+        border-bottom: var(--color-black) solid 1px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave */
+      }
+      .estilos-nav {
+        color: var(--color-black) !important;
+      }
+      .elemento2 {
+        display: none;
+      }
+      @media (max-width: 700px) {
+        .elemento1 {
+          display: none;
+        }
+        .elemento2 {
+          display: block;
+        }
+      }
+
+      #contenido-pagina {
+        height: 10vh;
+      }
+      #contenido-pagina {
+        background: url("images/1.jpg") no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 140vh;
+      }
+      .carrousel {
+        width: 80%;
+        filter: blur(5px) grayscale(50%);
+        border: solid var(--color-black) 2px;
+        border-radius: 10px !important;
+      }
+      img {
+        filter: none !important;
+      }
+      .carrousel:hover {
+        filter: none;
+        color: var(--color-black);
+      }
+      #servicios-list {
+        background-color: var(--uk-background-default);
+        position: relative;
+      }
+
+      #servicios {
+        position: inherit;
+        display: inline-block;
+        margin-top: auto;
+        margin-top: 10% !important;
+        width: 80%;
+        background-color: var(--uk-background-default);
+        font-size: 50px;
+        color: var(--color-black);
+        border-top: 5px solid var(--color-primary);
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+      .servicios-title {
+        padding-left: 45%;
+      }
+
+      #servicios-imagenes {
+        display: block;
+        height: 40%;
+      }
+
+      @media (max-width) {
+      }
+      #card-servicios {
+        margin-top: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+      #card-servicio {
+        height: 20vh;
+      }
+      #card-servicios .uk-card-title{
+        color: var(--color-primary)
+      }
+      .principales-locales{
+        background-color: var(--color-primary);
+      }
+      .content-local{
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+      .principales-locales #titulo-locales{
+        padding-top: 4%;
+        padding-bottom: 4%;
+      }
+      #titulo-locales h3{
+        color: var(--uk-background-default);
+        font-size: 35px;
+      }
+
+      #card-locales img{
+        width: 80%;
+      }
+      #espacio{
+        height: 50px;
+      }
+    </style>
+
+    <!-- Menu de navegación -->
+    <header
+      uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+      <!-- Linea principal -->
+      <div class="linea">
+        <div class="uk-position-right text-linea">ONLINE COMMERCE</div>
+        <div class="uk-position-left text-linea">Tel: 3503752816</div>
+      </div>
+
+      <nav class="uk-navbar-container elemento1">
+        <div class="uk-container">
+          <div uk-navbar>
+            <div class>
+              <a href="#"><img class="icono-nav" src="images/Logo.ico"
+                  alt="icono" /></a>
+            </div>
+
+            <div class="uk-navbar-center estilos-nav">
+              <ul class="uk-navbar-nav">
+                <li class="uk-active">
+                  <a href="#" uk-icon="icon: home">Inicio</a>
+                </li>
+                <li>
+                  <a href="#" uk-icon="icon: cart">Locales</a>
+                  <!-- <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                      <li class="uk-active"><a href="#">Active</a></li>
+                      <li><a href="#">Item</a></li>
+                      <li class="uk-nav-header">Header</li>
+                      <li><a href="#">Item</a></li>
+                      <li><a href="#">Item</a></li>
+                      <li class="uk-nav-divider"></li>
+                      <li><a href="#">Item</a></li>
+                    </ul>
+                  </div> -->
+                </li>
+                <li><a href="#" uk-icon="icon: eye">Sobre Nosotros</a></li>
+                <li><a href="#" uk-icon="icon: comment">Contacto</a></li>
+                <li><a href="#" uk-icon="icon: sign-in">Registrarse</a></li>
+                <li><a href="#" uk-icon="icon: user">Iniciar sesión</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <nav class="uk-navbar-container elemento2" id="stickyNav">
+        <div class="uk-container">
+          <div uk-navbar>
+            <div class>
+              <a href="#"><img class="icono-nav" src="images/Logo.ico"
+                  alt="icono" /></a>
+            </div>
+            <div class="uk-navbar-right">
+              <a
+                class="uk-navbar-toggle uk-navbar-toggle-animate"
+                uk-navbar-toggle-icon
+                href="#"></a>
+              <div class="uk-navbar-dropdown">
+                <ul class="uk-nav uk-navbar-dropdown-nav">
+                  <li class="uk-active">
+                    <a href="#" uk-icon="icon: home">Inicio</a>
+                  </li>
+                  <li>
+                    <a href="#" uk-icon="icon: cart">Locales</a>
+                    <!-- <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                  <li class="uk-active"><a href="#">Active</a></li>
+                                  <li><a href="#">Item</a></li>
+                                  <li class="uk-nav-header">Header</li>
+                                  <li><a href="#">Item</a></li>
+                                  <li><a href="#">Item</a></li>
+                                  <li class="uk-nav-divider"></li>
+                                  <li><a href="#">Item</a></li>
+                                </ul>
+                              </div> -->
+                  </li>
+                  <li><a href="#" uk-icon="icon: eye">Sobre Nosotros</a></li>
+                  <li><a href="#" uk-icon="icon: comment">Contacto</a></li>
+                  <li><a href="#" uk-icon="icon: sign-in">Registrarse</a></li>
+                  <li><a href="#" uk-icon="icon: user">Iniciar sesión</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div id="contenido-pagina">
+      <section id="servicios-imagenes">
+        <div
+          class="uk-position-center uk-visible-toggle uk-light carrousel"
+          tabindex="-1"
+          uk-slideshow="ratio: 7:3; animation: push">
+          <ul class="uk-slideshow-items">
+            <li>
+              <img
+                src="images/Productos_Vendidos_CocaCola1204.webp"
+                alt
+                uk-cover />
+            </li>
+            <li>
+              <img src="images/descarga.jfif" alt uk-cover />
+            </li>
+            <li>
+              <img src="images/images.jfif" alt uk-cover />
+            </li>
+          </ul>
+
+          <a
+            class="uk-position-center-left uk-position-small uk-hidden-hover"
+            color="black"
+            href="#"
+            uk-slidenav-previous
+            uk-slideshow-item="previous"></a>
+          <a
+            class="uk-position-center-right uk-position-small uk-hidden-hover"
+            color="black"
+            href="#"
+            uk-slidenav-next
+            uk-slideshow-item="next"></a>
+        </div>
+      </section>
+
+      <section id="servicios">
+        <div class="servicios-title">Servicios</div>
+      </section>
+
+      <section id="card-servicios">
+
+        <div class="uk-child-width-1-4@m" uk-grid>
+          <div>
+            <div class="uk-card uk-card-default">
+              <div class="uk-card-media-top">
+                <img src="images/Logo.png" width="1800" height="200" alt>
+              </div>
+              <div class="uk-card-body">
+                <center><h3 class="uk-card-title">Categoria</h3></center>
+                <center> <button class="uk-button uk-button-secondary">Ver</button></center>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default">
+              <div class="uk-card-media-top">
+                <img src="images/Logo.png" width="1800" height="200" alt>
+              </div>
+              <div class="uk-card-body">
+                <center><h3 class="uk-card-title">Categoria</h3></center>
+                <center> <button class="uk-button uk-button-secondary">Ver</button></center>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default">
+              <div class="uk-card-media-top">
+                <img src="images/Logo.png" width="1800" height="200" alt>
+              </div>
+              <div class="uk-card-body">
+                <center><h3 class="uk-card-title">Categoria</h3></center>
+                <center> <button class="uk-button uk-button-secondary">Ver</button></center>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default">
+              <div class="uk-card-media-top">
+                <img src="images/Logo.png" width="1800" height="200" alt>
+              </div>
+              <div class="uk-card-body">
+                <center><h3 class="uk-card-title">Categoria</h3></center>
+                <center> <button class="uk-button uk-button-secondary">Ver</button></center>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <section class="principales-locales">
+        <div class="content-local">
+          <div id="titulo-locales">
+            <h3>Nuestros principales locales</h3>
+          </div>
+
+          <div id="card-locales"
+            class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+            uk-grid>
+            <div class="uk-card-media-left uk-cover-container">
+              <img src="images/Productos_Vendidos_CocaCola1204.webp" alt uk-cover>
+              <canvas width="600" height="400"></canvas>
+            </div>
+            <div>
+              <div class="uk-card-body">
+                <h3 class="uk-card-title">Titulo de tienda</h3>
+                <p>Descripción de la tienda</p>
+                <center> <button class="uk-button uk-button-secondary">Ver</button></center>
+
+              </div>
+            </div>
+          </div>
+          <div id="card-locales"
+            class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+            uk-grid>
+            <div class="uk-card-media-left uk-cover-container">
+              <img src="images/Productos_Vendidos_CocaCola1204.webp" alt uk-cover>
+              <canvas width="600" height="400"></canvas>
+            </div>
+            <div>
+              <div class="uk-card-body">
+                <h3 class="uk-card-title">Titulo de tienda</h3>
+                <p>Descripción de la tienda</p>
+                <center> <button class="uk-button uk-button-secondary">Ver</button></center>
+
+              </div>
+            </div>
+          </div>
+          <div id="card-locales"
+          class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+          uk-grid>
+          <div class="uk-card-media-left uk-cover-container">
+            <img src="images/Productos_Vendidos_CocaCola1204.webp" alt uk-cover>
+            <canvas width="600" height="400"></canvas>
+          </div>
+          <div>
+            <div class="uk-card-body">
+              <h3 class="uk-card-title">Titulo de tienda</h3>
+              <p>Descripción de la tienda</p>
+              <center> <button class="uk-button uk-button-secondary">Ver</button></center>
+
+            </div>
+          </div>
+        </div>
+        <div id="espacio"></div>
+        </div>
+      </section>
+
+      <script></script>
+    </body>
+  </html>
